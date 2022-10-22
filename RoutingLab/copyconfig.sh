@@ -1,6 +1,6 @@
 #/bin/bash
 
-cd ~/34334/Routinglab
+cd ~/34334-arch/RoutingLab
 if [ -n "$(sudo docker ps -f "name=r14" -q)" ]
 then
 	sudo docker cp router1/ripd.conf router1:/etc/quagga/ripd.conf

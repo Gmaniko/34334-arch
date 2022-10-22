@@ -1,7 +1,7 @@
 #/bin/bash
 cd ~/34334
 
-if [ -z "$(sudo docker images 34334:ids -q)"] 
+if [ -z "$(sudo docker images 34334:ids -q)" ] 
 then 
 	sudo pip install gdown
 	gdown --id 1WscKcNj1wNrviL81FZZgnai3NsHzzIle
