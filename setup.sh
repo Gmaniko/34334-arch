@@ -1,5 +1,5 @@
 #/bin/bash
-cd ~/34334
+cd ~/34334-arch
 
 if [ -z "$(sudo docker images 34334:ids -q)" ] 
 then 
