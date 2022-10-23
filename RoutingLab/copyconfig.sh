@@ -11,6 +11,11 @@ then
 	sudo docker cp router3/zebra.conf router3:/etc/quagga/zebra.conf
 	sudo docker cp router4/ripd.conf router4:/etc/quagga/ripd.conf
 	sudo docker cp router4/zebra.conf router4:/etc/quagga/zebra.conf
+
+	sudo docker exec -ti router1 service quagga restart
+	sudo docker exec -ti router2 service quagga restart
+	sudo docker exec -ti router3 service quagga restart
+	sudo docker exec -ti router4 service quagga restart
 else
 	echo "RoutingLab is not running"
 fi
