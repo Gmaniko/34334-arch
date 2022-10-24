@@ -1,30 +1,22 @@
 Q1:
 	R1:
-		10.2.4.0/24
-		10.3.4.0/24
-		192.168.2.0/24
-		192.168.3.0/24
-		192.168.4.0/24
+		192.168.1.0/24
+		10.1.2.0/24
+		10.1.3.0/24
+		10.1.4.0/24
 	R2:
-		10.1.3.0/24
-		10.1.4.0/24
-		10.3.4.0/24
-		192.168.1.0/24
-		192.168.3.0/24
-		192.168.4.0/24
-	R3:
-		10.1.4.0/24
+		192.168.2.0/24
 		10.1.2.0/24
 		10.2.4.0/24
-		192.168.1.0/24
-		192.168.2.0/24
-		192.168.4.0/24
-	R4:
-		10.1.2.0/24
-		10.1.3.0/24
-		192.168.1.0/24
-		192.168.2.0/24
+	R3:
 		192.168.3.0/24
+		10.1.3.0/24
+		10.3.4.0/24
+	R4:
+		192.168.4.0/24
+		10.1.4.0/24
+		10.2.4.0/24
+		10.3.4.0/24
 
 Q2:
 	RIP response from router2:
@@ -57,9 +49,8 @@ Q6:
 	(no change?)
 
 Q7:
-	It does not recover. This is because the switch is unable to send RIP messages back
-	indicating that it has lost the connection to router1.
-
+	It recovers after 180 seconds (packets), as that is the duration of the timeout timer. Because of route poisoning router1 does not get any information from router4
+	about it's direct connection to router4, as the switch is not a router.
 Q8:
 	When disconnecting router4 from the switch, router4 knows that it is
 	unable to reach router1 the usual route. It reconnects shortly after.
