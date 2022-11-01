@@ -103,7 +103,7 @@ def buildlab():
 	except (OSError,subprocess.CalledProcessError) as e:
 		# if e is of type subprocess.CalledProcessError, assume docker is installed but service isn't started
 		if type(e) == subprocess.CalledProcessError:
-			subprocess.call(['systemctl', 'docker', 'start'])
+			subprocess.call(['systemctl', 'start', 'docker'])
 
 	lab.docker_build('images/')
   #adding logic to handle writing daemon.json so we can disable docker iptables rules

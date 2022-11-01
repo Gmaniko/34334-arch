@@ -108,7 +108,7 @@ def set_internet(inetnode, interface, bridge, ip, gw):
     r('ip netns exec $bridge ip link set $nic up')
     ns_root.enter_ns()
 
-    r('systemctl stop systemd-networkd')
+    r('systemctl stop NetworkManager')
     # Connecting root to lab
     print("Connecting localhost to lab")
     r('ip link set $bridge name 34334_lab')

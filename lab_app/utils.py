@@ -144,7 +144,7 @@ def docker_clean():
                     except:
                         pass
 
-       #r('service NetworkManager start')
+       r('systemctl start NetworkManager')
        #r('service networking restart')
   #  r('service docker status')
   #  try: 
